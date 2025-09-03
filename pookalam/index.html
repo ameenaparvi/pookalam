@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Pookalam – 8-petal layered design</title>
+<style>
+  :root{
+    --purple:#610b58;
+    --green-dark:#153411;
+    
+    --dark-blue:hsl(198, 47%, 29%);
+    --gold:#d7b300;
+    --red:#3c0303;
+    --line:#f3bc69;
+    --guide:#cfcfcf55;
+    --bg:#ffffff;
+    --orange:#cf450a;
+    --green:#126c2a;
+    --orange-dark:#af3500;
+  }
+  html,body{height:100%;margin:0;background:var(--bg);}
+  .wrap{display:grid;place-items:center;height:100%;}
+  svg{max-width:min(92vmin,760px);height:auto;display:block}
+</style>
+</head>
+<body>
+<div class="wrap">
+<svg viewBox="0 0 600 600" aria-label="Pookalam">
+  <defs>
+    <!-- Inner purple petal -->
+    <path id="petal-inner"
+      d="M300,185
+         C 360,185 385,255 300,330
+         C 215,255 240,185 300,185 Z" />
+    <!-- Middle green petal -->
+    <path id="petal-mid"
+      d="M300,165
+         C 370,165 400,255 300,345
+         C 200,255 230,165 300,165 Z" />
+    <!-- Back dark-green petal -->
+    <path id="petal-back"
+      d="M300,150
+         C 385,150 415,255 300,360
+         C 185,255 215,150 300,150 Z" />
+    <!-- White outer spike -->
+    <path id="spike"
+      d="M300,125 L320,210 L280,210 Z"
+      fill="white"/>
+  </defs>
+
+  <!-- Thin outer ring -->
+  <circle cx="300" cy="300" r="180"
+          fill="green" stroke="orange" stroke-width="7.5"/>
+
+  <!-- Outer white spikes -->
+  <g>
+    <use href="#spike" transform="rotate(0 300 300)"/>
+    <use href="#spike" transform="rotate(45 300 300)"/>
+    <use href="#spike" transform="rotate(90 300 300)"/>
+    <use href="#spike" transform="rotate(135 300 300)"/>
+    <use href="#spike" transform="rotate(180 300 300)"/>
+    <use href="#spike" transform="rotate(225 300 300)"/>
+    <use href="#spike" transform="rotate(270 300 300)"/>
+    <use href="#spike" transform="rotate(315 300 300)"/>
+  </g>
+
+  <!-- Dark-green longest petals -->
+  <g fill="var(--orange)">
+    <use href="#petal-back" transform="rotate(0 300 300)"/>
+    <use href="#petal-back" transform="rotate(45 300 300)"/>
+    <use href="#petal-back" transform="rotate(90 300 300)"/>
+    <use href="#petal-back" transform="rotate(135 300 300)"/>
+    <use href="#petal-back" transform="rotate(180 300 300)"/>
+    <use href="#petal-back" transform="rotate(225 300 300)"/>
+    <use href="#petal-back" transform="rotate(270 300 300)"/>
+    <use href="#petal-back" transform="rotate(315 300 300)"/>
+  </g>
+
+  <!-- Middle green petals -->
+  <g fill="var(--gold)">
+    <use href="#petal-mid" transform="rotate(22.5 300 300)"/>
+    <use href="#petal-mid" transform="rotate(67.5 300 300)"/>
+    <use href="#petal-mid" transform="rotate(112.5 300 300)"/>
+    <use href="#petal-mid" transform="rotate(157.5 300 300)"/>
+    <use href="#petal-mid" transform="rotate(202.5 300 300)"/>
+    <use href="#petal-mid" transform="rotate(247.5 300 300)"/>
+    <use href="#petal-mid" transform="rotate(292.5 300 300)"/>
+    <use href="#petal-mid" transform="rotate(337.5 300 300)"/>
+  </g>
+
+  <!-- Inner purple petals -->
+  <g fill="var(--purple)">
+    <use href="#petal-inner" transform="rotate(0 300 300)"/>
+    <use href="#petal-inner" transform="rotate(45 300 300)"/>
+    <use href="#petal-inner" transform="rotate(90 300 300)"/>
+    <use href="#petal-inner" transform="rotate(135 300 300)"/>
+    <use href="#petal-inner" transform="rotate(180 300 300)"/>
+    <use href="#petal-inner" transform="rotate(225 300 300)"/>
+    <use href="#petal-inner" transform="rotate(270 300 300)"/>
+    <use href="#petal-inner" transform="rotate(315 300 300)"/>
+  </g>
+<!-- Spokes matching innermost purple petals (rotated 22.5°) -->
+<g stroke="black" stroke-width="2">
+  <line x1="300" y1="300" x2="300" y2="195" transform="rotate(22.5 300 300)"/>
+  <line x1="300" y1="300" x2="300" y2="195" transform="rotate(67.5 300 300)"/>
+  <line x1="300" y1="300" x2="300" y2="195" transform="rotate(112.5 300 300)"/>
+  <line x1="300" y1="300" x2="300" y2="195" transform="rotate(157.5 300 300)"/>
+  <line x1="300" y1="300" x2="300" y2="195" transform="rotate(202.5 300 300)"/>
+  <line x1="300" y1="300" x2="300" y2="195" transform="rotate(247.5 300 300)"/>
+  <line x1="300" y1="300" x2="300" y2="195" transform="rotate(292.5 300 300)"/>
+  <line x1="300" y1="300" x2="300" y2="195" transform="rotate(337.5 300 300)"/>
+</g>
+
+
+  <!-- Center discs -->
+  <circle cx="300" cy="300" r="88"
+          fill="gold" stroke="var(--red)" stroke-width="2.5"/>
+  <circle cx="300" cy="300" r="58"
+          fill="red" stroke="var(--gold)" stroke-width="2.5"/>
+  <circle cx="300" cy="300" r="5" fill="#ffffff"
+          stroke="#999" stroke-width="1.2"/>
+
+<!-- Transparent rose at the center -->
+<image
+  href="https://freesvg.org/img/1596429913kathakaliComplex.png"
+  x="250"
+  y="250"
+  width="100"
+  height="100"
+/>
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Guide rings -->
+  
+</svg>
+</div>
+</body>
+</html>
